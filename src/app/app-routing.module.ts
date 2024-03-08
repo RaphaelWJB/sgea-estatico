@@ -2,17 +2,21 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './theme/layout/admin/admin.component';
 import { GuestComponent } from './theme/layout/guest/guest.component';
+import { HomePageComponent } from './demo/components/home/home-page/home-page.component';
 
 const routes: Routes = [
+
+
+
+  {
+    path:'',
+    component: HomePageComponent
+  },
   {
     path: '',
     component: AdminComponent,
     children: [
-      {
-        path: '',
-        redirectTo: 'dashboard',
-        pathMatch: 'full',
-      },
+      
       {
         path: 'dashboard',
         loadComponent: () => import('./demo/dashboard/dashboard.component'),

@@ -24,13 +24,13 @@ export interface Navigation extends NavigationItem {
 const NavigationItems = [
   {
     id: 'navigation',
-    title: 'Navigation',
+    title: 'Navegação',
     type: 'group',
     icon: 'icon-navigation',
     children: [
       {
         id: 'dashboard',
-        title: 'Dashboard',
+        title: 'Bem Vindo',
         type: 'item',
         url: '/dashboard',
         icon: 'feather icon-home',
@@ -40,65 +40,53 @@ const NavigationItems = [
   },
   {
     id: 'ui-element',
-    title: 'UI ELEMENT',
+    title: 'Registros',
     type: 'group',
     icon: 'icon-ui',
     children: [
       {
         id: 'basic',
-        title: 'Component',
+        title: 'Cadastro',
         type: 'collapse',
         icon: 'feather icon-box',
         children: [
           {
             id: 'button',
-            title: 'Button',
+            title: 'Fornecedor',
             type: 'item',
             url: '/basic/button',
           },
           {
             id: 'badges',
-            title: 'Badges',
+            title: 'Colaborador',
             type: 'item',
             url: '/basic/badges',
           },
           {
             id: 'breadcrumb-pagination',
-            title: 'Breadcrumb & Pagination',
+            title: 'Cliente',
             type: 'item',
             url: '/basic/breadcrumb-paging',
           },
           {
             id: 'collapse',
-            title: 'Collapse',
+            title: 'Produto',
             type: 'item',
             url: '/basic/collapse',
-          },
-          {
-            id: 'tabs-pills',
-            title: 'Tabs & Pills',
-            type: 'item',
-            url: '/basic/tabs-pills',
-          },
-          {
-            id: 'typography',
-            title: 'Typography',
-            type: 'item',
-            url: '/basic/typography',
-          },
+          }
         ],
       },
     ],
   },
   {
     id: 'forms',
-    title: 'Forms & Tables',
+    title: 'Entrada de informações',
     type: 'group',
     icon: 'icon-group',
     children: [
       {
         id: 'forms-element',
-        title: 'Form Elements',
+        title: 'Vendas',
         type: 'item',
         url: '/forms/basic',
         classes: 'nav-item',
@@ -106,7 +94,7 @@ const NavigationItems = [
       },
       {
         id: 'tables',
-        title: 'Tables',
+        title: 'Lançar Faturas',
         type: 'item',
         url: '/tables/bootstrap',
         classes: 'nav-item',
@@ -116,13 +104,13 @@ const NavigationItems = [
   },
   {
     id: 'chart-maps',
-    title: 'Chart',
+    title: 'Acompanhamento',
     type: 'group',
     icon: 'icon-charts',
     children: [
       {
         id: 'apexChart',
-        title: 'ApexChart',
+        title: 'Graficos',
         type: 'item',
         url: 'apexchart',
         classes: 'nav-item',
@@ -132,62 +120,51 @@ const NavigationItems = [
   },
   {
     id: 'pages',
-    title: 'Pages',
+    title: 'Informações',
     type: 'group',
     icon: 'icon-pages',
     children: [
       {
         id: 'auth',
-        title: 'Authentication',
+        title: 'Relatorios',
         type: 'collapse',
         icon: 'feather icon-lock',
         children: [
           {
-            id: 'signup',
-            title: 'Sign up',
+            id: 'colaborador',
+            title: 'Colaborador',
             type: 'item',
-            url: '/auth/signup',
+            url: ' ',
             target: true,
             breadcrumbs: false,
           },
           {
-            id: 'signin',
-            title: 'Sign in',
+            id: 'cliente',
+            title: 'Cliente',
             type: 'item',
-            url: '/auth/signin',
+            url: ' ',
             target: true,
             breadcrumbs: false,
           },
+          {
+            id: 'produto',
+            title:'Produto',
+            type:'item',
+            url:' ',
+            target:true,
+            breadcrumbs: false,
+          },
+          {
+            id: 'financeiro',
+            title:'Financeiro',
+            type:'item',
+            url:' ',
+            target:true,
+            breadcrumbs: false,
+          }
         ],
       },
-      {
-        id: 'sample-page',
-        title: 'Sample Page',
-        type: 'item',
-        url: '/sample-page',
-        classes: 'nav-item',
-        icon: 'feather icon-sidebar',
-      },
-      {
-        id: 'disabled-menu',
-        title: 'Disabled Menu',
-        type: 'item',
-        url: 'javascript:',
-        classes: 'nav-item disabled',
-        icon: 'feather icon-power',
-        external: true,
-      },
-      {
-        id: 'buy_now',
-        title: 'Buy Now',
-        type: 'item',
-        icon: 'feather icon-book',
-        classes: 'nav-item',
-        url: 'https://codedthemes.com/item/datta-able-angular/',
-        target: true,
-        external: true,
-      },
-    ],
+     ],
   },
 ];
 
