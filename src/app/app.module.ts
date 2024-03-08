@@ -23,6 +23,7 @@ import { NavItemComponent } from './theme/layout/admin/navigation/nav-content/na
 import { NavSearchComponent } from './theme/layout/admin/nav-bar/nav-left/nav-search/nav-search.component';
 import { NavigationItem } from './theme/layout/admin/navigation/navigation';
 import { ToggleFullScreenDirective } from './theme/shared/components/full-screen/toggle-full-screen';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ToggleFullScreenDirective } from './theme/shared/components/full-screen
     NavItemComponent,
     NavSearchComponent,
     ToggleFullScreenDirective,
+    
   ],
   imports: [
     BrowserModule,
@@ -49,6 +51,7 @@ import { ToggleFullScreenDirective } from './theme/shared/components/full-screen
     ReactiveFormsModule,
     SharedModule,
     BrowserAnimationsModule,
+    RouterLink
   ],
   providers: [NavigationItem],
   bootstrap: [AppComponent],
