@@ -8,6 +8,7 @@ import { DattaConfig } from 'src/app/app-config';
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
+  
 })
 export class NavigationComponent {
   // public props

@@ -54,25 +54,25 @@ const NavigationItems = [
             id: 'button',
             title: 'Fornecedor',
             type: 'item',
-            url: '/basic/button',
+            url: '/listarFornecedor',
           },
           {
             id: 'badges',
             title: 'Colaborador',
             type: 'item',
-            url: '/basic/badges',
+            url: '/listarColaborador',
           },
-          {
+                    {
             id: 'breadcrumb-pagination',
             title: 'Cliente',
             type: 'item',
-            url: '/basic/breadcrumb-paging',
+            url: '/listarCliente',
           },
           {
             id: 'collapse',
             title: 'Produto',
             type: 'item',
-            url: '/basic/collapse',
+            url: '/listarProduto',
           }
         ],
       },
