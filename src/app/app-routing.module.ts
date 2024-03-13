@@ -12,6 +12,16 @@ import { ListarClienteComponent } from './demo/components/cadastros/cliente/list
 import { NovoClienteComponent } from './demo/components/cadastros/cliente/novo-cliente/novo-cliente.component';
 import { ListarProdutosComponent } from './demo/components/cadastros/produtos/listar-produtos/listar-produtos.component';
 import { NovoProdutoComponent } from './demo/components/cadastros/produtos/novo-produto/novo-produto.component';
+ 
+import { ListarFaturaComponent } from './demo/components/entrada_de_informacoes/listar-fatura/listar-fatura.component';
+import { NovaFaturaComponent } from './demo/components/entrada_de_informacoes/nova-fatura/nova-fatura.component';
+import { ListarVendaComponent } from './demo/components/entrada_de_informacoes/listar-venda/listar-venda.component';
+import { NovaVendaComponent } from './demo/components/entrada_de_informacoes/nova-venda/nova-venda.component';
+import { ProdutoComponent } from './demo/components/extrato/listarRelatorio/produto/produto.component';
+import { ClienteComponent } from './demo/components/extrato/listarRelatorio/cliente/cliente.component';
+import { ColaboradorComponent } from './demo/components/extrato/listarRelatorio/colaborador/colaborador.component';
+import { FinanceiroComponent } from './demo/components/extrato/listarRelatorio/financeiro/financeiro.component';
+import AuthSigninComponent from './demo/pages/authentication/auth-signin/auth-signin.component';
 
 const routes: Routes = [
 
@@ -20,6 +30,10 @@ const routes: Routes = [
   {
     path:'',
     component: HomePageComponent
+  },
+  {
+    path:'loginSGEA',
+    component:AuthSigninComponent
   },
   {
     path: '',
@@ -92,7 +106,40 @@ const routes: Routes = [
       {
         path: 'novoProduto',
         component: NovoProdutoComponent
-      }
+      },
+      {
+        path: 'listarVendas',
+        component: ListarVendaComponent
+      },
+      {
+        path: 'novaVenda',
+        component: NovaVendaComponent
+      },
+      {
+        path: 'listarFatura',
+        component: ListarFaturaComponent
+      },
+      {
+        path:'novaFatura',
+        component: NovaFaturaComponent
+      },
+      {
+        path: 'listarRcolaborador',
+        component: ColaboradorComponent
+      },  
+      {
+        path: 'listarRcliente',
+        component: ClienteComponent
+      },
+      {
+        path:'listarRproduto',
+        component: ProdutoComponent
+      },
+      {
+        path:'listarRfinanceiro',
+        component: FinanceiroComponent
+      },     
+      
     ],
   },
   {

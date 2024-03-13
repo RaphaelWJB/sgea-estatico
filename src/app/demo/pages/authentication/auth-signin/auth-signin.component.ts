@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-auth-signin',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './auth-signin.component.html',
   styleUrls: ['./auth-signin.component.scss'],
 })
