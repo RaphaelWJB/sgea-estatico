@@ -22,6 +22,7 @@ import { ClienteComponent } from './demo/components/extrato/listarRelatorio/clie
 import { ColaboradorComponent } from './demo/components/extrato/listarRelatorio/colaborador/colaborador.component';
 import { FinanceiroComponent } from './demo/components/extrato/listarRelatorio/financeiro/financeiro.component';
 import AuthSigninComponent from './demo/pages/authentication/auth-signin/auth-signin.component';
+import { ComponentDialogComponent } from './demo/components/dialog/component-dialog/component-dialog.component';
 
 const routes: Routes = [
 
@@ -75,10 +76,7 @@ const routes: Routes = [
         loadComponent: () =>
           import('./demo/extra/sample-page/sample-page.component'),
       },
-      {
-        path:'listarColaborador',
-        component: ListarColaboradorComponent
-      },
+       
       {
         path: 'novoColaborador',
         component: NovoColaboradorComponent
