@@ -1,0 +1,41 @@
+ 
+<body>
+ 
+
+    <header>
+       
+      <button>
+        <img 
+         src="assets/dialog/close.svg"
+         alt="Imagem para fechar caixa de dialogo"
+         (click)="closeModal()"
+         height=" 45px;"
+         width=" 45px"
+          >
+      </button>
+      </header>
+      
+      <section>
+        <mat-dialog-content>
+          <h3>DESCRIÇÃO</h3>
+        </mat-dialog-content>
+      </section>
+    
+      <mat-dialog-content>
+      <nav>
+        <ul>
+            <li><h1>PRODUTO: </h1><p>{{getData()?.produto}}</p></li>
+            <li><h1>CODIGO: </h1><p>{{getData()?.codigo}}</p></li>
+            <li><h1>MARCA: </h1><p>{{getData()?.marca}}</p></li>
+            <li><h1>ESTOQUE: </h1><p>{{getData()?.qtde_estoque}}</p></li>
+            <li><h1>TIPO: </h1><p>{{getData()?.tipo}}</p></li>
+            <li><h1>VENCIMENTO EM:: </h1><p>{{getData()?.data_de_vencimento}}</p></li>
+            <li><h1>CATEGORIA: </h1><p>{{getData()?.categoria}}</p></li>
+ 
+        </ul>
+      </nav>
+    </mat-dialog-content>
+    </body>
+    
+     
+    

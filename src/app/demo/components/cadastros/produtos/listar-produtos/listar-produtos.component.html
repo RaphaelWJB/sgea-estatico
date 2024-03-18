@@ -1,0 +1,129 @@
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <!-- <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.php">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Cadastros</li>
+            <li class="breadcrumb-item active">Produtos</li>
+        </ol> -->
+        <div class="row">
+            <div class="col-12">
+                <h1>Produtos</h1>
+
+
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <i class="fa fa-boxes"></i> Produtos
+                        <a routerLink="/novoProduto"><button class="btn btn-success float-right mr-1">ADICIONAR</button></a>
+
+
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Produto</th>
+                                    <th>Marca</th>
+                                    <th>Qtde. Estoque</th>
+                                    <th>Tipo</th>
+                                    <th>Categoria</th>
+                                    <th>Data de Vencimento</th>
+                                    <th>Fornecedor</th>
+                                    <th>&nbsp;Ação</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                    @for(item of arrayProdutos(); track item){
+                                <tr>
+                                    <td>{{item.codigo}}</td>
+                                    <td>{{item.produto}}</td>
+                                    <td>{{item.marca}}</td>
+                                    <td>{{item.qtde_estoque}}</td>
+                                    <td>{{item.tipo}}</td>
+                                    <td>{{item.categoria}}</td>
+                                    <td>{{item.data_de_vencimento}}</td>
+                                    <td>{{item.fornecedor}}</td>
+                                    <td>
+                                        
+                                        <button (click)="openDialog(item)">
+                                        <a class="fa fa-list-alt text-secondary" data-toggle="modal" 
+                                         data-target="#mostrar" title="detalhes"></a>
+                                            
+                                        </button> 
+                                        <a href="editarProduto.php" class="fa fa-edit align-items-center"></a>
+                                        <a href="#" class="fa fa-trash-alt text-danger"  data-toggle="modal" data-target="#modalExcluirProduto"></a>
+                                    </td>
+                                </tr>
+                            }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<!--Excluir Produto-->
+<div class="modal fade" id="modalExcluirProduto" tabindex="-1" role="dialog" aria-labelledby="excluirProduto" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Confirmação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Deseja realmente excluir o produto <strong>Oleo de motor</strong>?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">NÃO</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="alert('Produto excluido com sucesso!')">SIM</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Detalhar Produtos-->
+<div class="modal fade" id="mostrar" tabindex="-1" role="dialog" aria-labelledby="excluir" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Informações do Produto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <p>Codigo: 1</p>
+                <p>Nome do produto: Oleo de motor</p>
+                <p>Marca do produto: Grid</p>
+                <p>Descrição do produto: Oleo de motor - Grid carros tal</p>
+                <p>Qtde. p/ alerta: 25</p>
+                <p>Qtde. Estoque: 220</p>
+                <p>Tipo: LT</p>
+                <p>Categoria: Perecivel</p>
+                <p>Data de Vencimento: 	25/07/2018</p>
+                <p>Fornecedor: Comando</p>
+                <p>Valor de Compra: 12</p>
+                <p>Valor de Venda: 18</p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,153 @@
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">Cadastro de Produto</h1>
+
+        <form class="">
+
+            <div class="form-row">
+                <!--Importação de arquivo XML-->
+                <div class="form-group">
+                    <label for="campoImportXml">Importação de XML: </label>
+                    <input type="file" class="custom-file" id="campoImportXml">
+                </div>
+            </div>
+
+            <!--Codigo do produto-->
+            <div class="form-row">
+                <!--Codigo do produto-->
+                <div class="form-group col-2">
+                    <label for="campoCodProd">Código do produto</label>
+                    <input type="text" class="form-control" id="campoCodProd" value="2" disabled>
+                </div>
+            </div>
+
+            <!--Nome, Marca e Descrição do produto-->
+            <div class="form-row">
+                <!--Nome do produto-->
+                <div class="form-group col-4 ">
+                    <label for="campoCnpj">Nome do produto</label>
+                    <input type="text" class="form-control" id="campoCnpj" placeholder="Nome do produto">
+                </div>
+
+                <!--Marca do produto-->
+                <div class="form-group col-4 ">
+                    <label for="campoCnpj">Marca do produto</label>
+                    <input type="text" class="form-control" id="campoCnpj" placeholder="Marca do produto">
+                </div>
+
+                <!--Descrição do produto-->
+                <div class="form-group col-8">
+                    <label for="campoCnpj">Descrição do produto</label>
+                    <textarea name="" id="" cols="" rows="" class="form-control" style="resize: none" placeholder="Descrição do produto"></textarea>
+                </div>
+            </div>
+
+            <!--Qtde. Produtos e Qtde. p/ alertas do produto-->
+            <div class="form-row">
+
+                <!--Qtde. Produtos do produto-->
+                <div class="form-group col-3">
+                    <label for="campoRamoAtuacao">Qtde. Produto</label>
+                    <input type="text" class="form-control" id="campoRamoAtuacao" placeholder="Qtde. Produto">
+                </div>
+
+                <!--Qtde. p/ alertas do produto-->
+                <div class="form-group col-3">
+                    <label for="inputNomeFantasia">Qtde. p/ alerta</label>
+                    <input type="text" class="form-control" id="inputNomeFantasia" placeholder="Qtde. p/ alerta">
+                </div>
+
+                <!--Qtde. Estoque produto-->
+                <div class="form-group col-2">
+                    <label for="inputNomeFantasia">Qtde. Estoque</label>
+                    <input type="text" disabled class="form-control" id="inputNomeFantasia" placeholder="Qtde. p/ alerta" value="220">
+                </div>
+
+            </div>
+
+            <!--Tipo e validade do produto-->
+            <div class="form-row">
+
+                <!--Tipo do produto-->
+                <div class="form-group mr-2">
+                    <label for="campoCidade">Tipo</label>
+                    <select name="" id="" class="form-control">
+                        <option value="" selected>LT</option>
+                        <option value="">UN</option>
+                        <option value="">CX</option>
+                        <option value="">PC</option>
+                    </select>
+                </div>
+
+                <!--Categoria do produto-->
+                <div class="form-group">
+                    <label for="tipo">Categoria</label>
+                    <select name="categoria" id="categoria" class="form-control">
+                        <option value="naoPerecivel" onclick="cadastrarInstituicao();">Não Perecivel</option>
+                        <option value="perecivel" onclick="cadastrarInstituicao();">Perecivel</option>
+                    </select>
+                </div>
+
+                <!--Validade do produto-->
+                <div class="form-group  ml-2">
+                    <label for="campoValidade" id="lblValidade">Data de Vencimento</label>
+                    <input type="date" class="form-control" id="campoValidade">
+                </div>
+
+            </div>
+
+
+            <!--Fornecedor, Vlr. Compra, Vlr. Venda do produto-->
+            <div class="form-row mb-4">
+
+                <!--Fornecedor do produto-->
+                <div class="form-group col-4">
+                    <label for="campoBairro">Fornecedor</label>
+                    <input type="text" class="form-control" id="campoBairro" placeholder="Fornecedor">
+<!--                            <i class="far fa-plus-square text-success" style="font-size: 2em ;"></i>-->
+                </div>
+                <div class="form-group mr-4 mt-5">
+                    <label for="campoCidade"></label>
+                    <a href=""><i class="far fa-plus-square text-success" style="font-size: 1.5em ;"></i></a>
+                </div>
+
+                <!--Vlr. Compra do produto-->
+                <div class="form-group col-2">
+                    <label for="campoCidade">Valor de Compra</label>
+                    <input type="text" class="form-control" id="campoCidade" placeholder="Valor de Compra">
+                </div>
+
+                <!--Vlr. Venda do produto-->
+                <div class="form-group col-2">
+                    <label for="campoNumero">Valor de Venda</label>
+                    <input type="text" class="form-control" id="campoNumero" placeholder="Valor de Venda">
+                </div>
+
+                <!--Adicionar produtos-->
+                <div class="form-group col-2 mt-1">
+                    <button class="btn btn-success mt-4" (click)="alerta()">Adicionar</button>
+                </div>
+            </div>
+
+            <!--Tabela de produto-->
+            <div class="form-row col-12">
+
+                <div class="card mb-3">
+                    
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Produto</th>
+                                    <th>Marca</th>
+                                    <th>Qtde. Produto</th>
+                                    <th>Tipo</th>
+                                    <th>Categoria</th>
+                                    <th>Data de Vencimento</th>
+                                    <th>Fornecedor <a href=""><i class="far fa-plus-square text-success"></i></a></th>
+                                    <th>Ação</th>
+                                </tr>
+                                </thead>

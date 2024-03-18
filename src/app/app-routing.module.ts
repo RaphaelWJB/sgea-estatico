@@ -80,7 +80,11 @@ const routes: Routes = [
       {
         path: 'novoColaborador',
         component: NovoColaboradorComponent
-      },   
+      },  
+      {
+        path: 'listarColaborador',
+        component: ListarColaboradorComponent
+      },  
        {
         path: 'listarFornecedor',
         component: ListarFornecedorComponent

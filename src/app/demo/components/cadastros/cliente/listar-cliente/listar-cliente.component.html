@@ -1,0 +1,111 @@
+<div class="content-wrapper">
+    <div class="container-fluid">
+       
+        <div class="row">
+            <div class="col-12">
+                <h1>Cliente</h1>
+
+
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <i class="fa fa-users"></i> Cliente
+                        <a routerLink="/novoCliente"><button class="btn btn-success float-right col-1">NOVO</button></a>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>CPF</th>
+                                    <th>Telefone</th>
+                                    <th>Email</th>
+                                    <!-- <th>Acesso</th> -->
+                                    <th>Situação</th>
+                                    <th>&nbsp;Ação</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    @for(item of arrayCliente(); track item){
+
+                                  
+                                    <td>{{item.nome}}</td>
+                                    <td>{{item.cpf}}</td>
+                                    <td>{{item.telefone}}</td>
+                                    <td>{{item.email}}</td>
+                                    <!-- <td>Pai Soberano</td> -->
+                                    <td>Ativo</td>
+                                }
+                                    <td>    @for(item of arrayCliente(); track item){ 
+                                        <button (click)="openDialog(item)"><a class="fa fa-list-alt text-secondary"  data-toggle="modal" data-target="#mostrar" title="Detalhes"></a></button>}
+                                        <a href="editarCliente.php" class="fa fa-edit align-items-center" title="Editar"></a>
+                                        <a href="#" class="fa fa-ban text-danger"  data-toggle="modal" data-target="#modalInativarCliente" data-placement="top" title="Inativar"></a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+<!--                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<!--Inativar Cliente-->
+<div class="modal fade" id="modalInativarCliente" tabindex="-1" role="dialog" aria-labelledby="inativarCliente" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Confirmação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Deseja realmente inativar o Cliente <strong>Matheus Viana</strong>?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">NÃO</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"onclick="alert('Cliente inativado com sucesso!')">SIM</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Detalhar Fornecedor-->
+<div class="modal fade" id="mostrar" tabindex="-1" role="dialog" aria-labelledby="excluir" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Informações do Fornecedor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <p>Codigo: 123</p>
+                <p>Nome: Matheus Viana</p>
+                <p>CPF: 789.456.123-58</p>
+                <p>Data de Nascimento: 13/10/1995</p>
+                <p>Telefone: (061) 9 9585-6985</p>
+                <p>Email: Matheus&#64;gmail.com</p>
+                <p>Endereço: nº 24 - Setor 10 - Aguas lindas - GO - 72.154-589</p>
+                <p>Usuario: Matheus.Viana</p>
+                <p>Acesso: Proprietário</p>
+                <p>Situação: Ativo</p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+            </div>
+        </div>
+    </div>
+</div>

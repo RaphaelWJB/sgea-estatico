@@ -1,0 +1,103 @@
+<div class="content-wrapper">
+    <div class="container-fluid">
+       
+        <div class="row">
+            <div class="col-12">
+                <h1>Colaborador</h1>
+
+
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <i class="fa fa-users"></i> Colaborador
+                        <a routerLink="/novoColaborador"><button class="btn btn-success float-right col-1">NOVO</button></a>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>CPF</th>
+                                    <th>Telefone</th>
+                                    <th>Email</th>
+                                    <th>Acesso</th>
+                                    <th>Situação</th>
+                                    <th>&nbsp;Ação</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    @for(item of arrayColaborador(); track item){
+                                <tr>
+                                   
+                                    <td>{{item.nome}}</td>
+                                    <td>{{item.cpf}}</td>
+                                    <td>{{item.telefone}}</td>
+                                    <td>{{item.email}}</td>
+                                    <td>{{item.acesso}}</td>
+                                    <td>{{item.situacao}}</td>
+                               
+                                    <td>
+                                        <button><a class="fa fa-list-alt text-secondary"  data-toggle="modal" data-target="#mostrar" title="Detalhes" (click)="openDialog(item)"></a></button>
+                                        <a href="editarColaborador.php" class="fa fa-edit align-items-center" title="Editar"></a>
+                                        <a href="#" class="fa fa-ban text-danger"  data-toggle="modal" data-target="#modalInativarColaborador" data-placement="top" title="Inativar"></a>
+                                    </td>
+                                </tr>
+                                
+                            }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+<!--                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<!--Inativar Colaborador-->
+<div class="modal fade" id="modalInativarColaborador" tabindex="-1" role="dialog" aria-labelledby="inativarColaborador" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Confirmação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Deseja realmente inativar o colaborador <strong>Matheus Viana</strong>?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">NÃO</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"onclick="alert('Colaborador inativado com sucesso!')">SIM</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Detalhar Fornecedor-->
+<div class="modal fade" id="mostrar" tabindex="-1" role="dialog" aria-labelledby="excluir" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Informações do Fornecedor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+               
+               
+ 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+            </div>
+        </div>
+    </div>
+</div>

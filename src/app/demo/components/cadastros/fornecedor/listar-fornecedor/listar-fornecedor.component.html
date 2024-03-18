@@ -1,0 +1,135 @@
+ 
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+       
+        <div class="row">
+            <div class="col-12">
+                <h1>Fornecedor</h1>
+
+
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <i class="fa fa-users"></i> Fornecedor
+                        <a routerLink="/novoFornecedor"><button class="btn btn-success float-right col-1">NOVO</button></a>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>CPF</th>
+                                    <th>Telefone</th>
+                                    <th>Email</th>
+                                    <th>Acesso</th>
+                                    <th>Situação</th>
+                                    <th>&nbsp;Ação</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                   
+                                <tr>
+                                    @for(item of arrayFornecedor(); track item){
+                                    <td>{{item.nome}}</td>
+                                    <td>{{item.cpf}}</td>
+                                    <td>{{item.telefone}}</td>
+                                    <td>{{item.email}}</td>
+                                    <td>{{item.acesso}}</td>
+                                    <td>{{item.situacao}}</td>
+                                }
+
+                                
+                                    <td >
+                                        @for(item of arrayFornecedor(); track item) {
+                                        <button (click)="openDialog(item)">
+                                        <a class="fa fa-list-alt text-secondary" data-toggle="modal"
+                                        data-target="#mostrar" title="Detalhes" ></a> </button>}
+                                        <a href="editarFornecedor.php" class="fa fa-edit align-items-center" title="Editar"></a>
+                                        <a href="#" class="fa fa-ban text-danger"  data-toggle="modal" data-target="#modalInativarFornecedor" data-placement="top" title="Inativar"></a>
+                                 
+                                    </td>
+                               
+                                   
+                               
+                                </tr>
+                            
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+<!--                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<!--Excluir fornecedor-->
+<div class="modal fade" id="modalExcluirFornecerdor" tabindex="-1" role="dialog" aria-labelledby="excluirFornecerdor" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Confirmação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Deseja realmente excluir o fornecedor <strong>COMANDO AUTO-PEÇAS LTDA</strong>?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">NÃO</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="alert('Fornecedor excluido com sucesso!')">SIM</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Detalhar Fornecedor-->
+<div class="modal fade" id="modalDetalharFornecerdor" tabindex="-1" role="dialog" aria-labelledby="detalharFornecedor" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Informações do Fornecedor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>Dados da empresa</h5>
+                    <div class="ml-2">
+                        <p>Codigo: 123</p>
+                        <p>Razão Social: COMANDO AUTO-PEÇAS LTDA</p>
+                        <p>Nome Fantasia: COMANDO AUTO-PEÇAS</p>
+                        <p>CNPJ: 00000000/0001</p>
+                        <p>Inscrição Estadual: 545644981132</p>
+                        <p>Ramo de Atuação: PEÇAS AUTOMOTIVAS</p>
+                        <p>Telefone: (61) 3333-3333</p>
+                        <p>Email: COMANDOAUTOPECAS&#64;COMANDO.COM</p>
+                        <p>Endereço: Nº 25 - CEILANDIA - BRASILIA-DF - 77.852-258 - EDIFIO TESTE-4º ANDAR</p>
+                        <hr>
+                    </div>
+                <h5>Dados do representante</h5>
+                    <div class="ml-2">
+                        <p>Nome do Representante: JOAQUIM SANTOS</p>
+                        <p>Celular: (061) 9 8595-8965</p>
+                        <p>Função: GERENTE</p>
+                        <p>Email: JOAQUIM&#64;COMANDO.COM</p>
+                    </div>
+                
+
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,122 @@
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.php">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Relatório de Produtos</li>
+        </ol>
+        <div class="row">
+            <div class="col-12">
+                <h1>Produtos</h1>
+                <form action="" method="post">
+                    <!--<div class="form-group">-->
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Total de estoque
+                        </label>
+                    </div>
+
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Produto mais vendido
+                        </label>
+                    </div>
+
+                    <!--</div>-->
+
+                    <div class="card mb-5">
+                        
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                                    <thead>
+                                    <tr>
+                                        <th>Código</th>
+                                        <th>Produto</th>
+                                        <th>Marca</th>
+                                        <th>Qtde. Estoque</th>
+                                        <th>Tipo</th>
+                                        <th>Categoria</th>
+                                        <th>Data de Vencimento</th>
+                                        <th>Fornecedor</th>
+                                        <th>&nbsp;Ação</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Oleo de motor</td>
+                                        <td>Grid</td>
+                                        <td>220</td>
+                                        <td>LT</td>
+                                        <td>Perecivel</td>
+                                        <td>25/07/2018</td>
+                                        <td>Comando</td>
+                                        <td>
+                                            <a href="#" class="fa fa-file-pdf" title="PDF" onclick="imprimir()"></a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
+                    </div>
+<div>
+                            <button type="submit" class="btn btn-success" onclick="imprimir()"><i class="fa fa-print"></i> Imprimir</button>
+                        </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<!--Excluir fornecedor-->
+<div class="modal fade" id="excluir" tabindex="-1" role="dialog" aria-labelledby="excluir" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Excluir Fornecedor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Deseja realmente excluir o fornecedor <strong>COMANDO AUTO-PEÇAS LTDA</strong></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">NÃO</button>
+                <button type="button" class="btn btn-primary">SIM</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Detalhar Fornecedor-->
+<div class="modal fade" id="mostrar" tabindex="-1" role="dialog" aria-labelledby="excluir" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Informações do Fornecedor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+            </div>
+        </div>
+    </div>
+</div>

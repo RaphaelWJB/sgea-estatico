@@ -1,0 +1,21 @@
+ :host{
+
+     body{
+      // background-image: url("../../../../../assets/img/auto.jpg");
+       background: rgba(194, 191, 191, 0.438);
+     } 
+ 
+     
+     #formContato{
+
+        border-radius: 7px;
+        background: rgba(138, 137, 137, 0.555);
+        &:hover{
+          background: rgb(107, 106, 106);
+          transition: 0.5s;
+        }      
+       
+      }
+
+
+ }
