@@ -21,21 +21,28 @@
   </section>
 
   <mat-dialog-content>
+
+   
+
+    
   <nav>
+    @for(fornecedor of fornecedores; track fornecedor){
     <ul>
-        <li><h1>NOME: </h1><p>{{getData()?.nome}}</p></li>
-        <li><h1>CPF: </h1><p>{{getData()?.cpf}}</p></li>
-        <li><h1>D. NASCIMENTO: </h1><p>{{getData()?.dataNascto}}</p></li>
-        <li><h1>CONTATO: </h1><p>{{getData()?.telefone}}</p></li>
-        <li><h1>EMAIL: </h1><p>{{getData()?.email}}</p></li>
-        <li><h1>BAIRRO: </h1><p>{{getData()?.bairro}}</p></li>
-        <li><h1>CIDADE: </h1><p>{{getData()?.cidade}}</p></li>
-        <li><h1>ESTADO: </h1><p>{{getData()?.estado}}</p></li>
-        <li><h1>N°: </h1><p>{{getData()?.numero}}</p></li>
-        <li><h1>COMPLEMENTO: </h1><p>{{getData()?.complemento}}</p></li>
-        <li><h1>ACESSO: </h1><p>{{getData()?.acesso}}</p></li>
+        <li><h1>NOME: </h1><p>{{fornecedor.nome}}</p></li>
+        <li><h1>CPF: </h1><p>{{fornecedor.cpf}}</p></li>
+        <li><h1>D. NASCIMENTO: </h1><p>{{fornecedor.data_de_nascimento}}</p></li>
+        <li><h1>CONTATO: </h1><p>{{fornecedor.telefone}}</p></li>
+        <li><h1>EMAIL: </h1><p>{{fornecedor.email}}</p></li>
+        <li><h1>BAIRRO: </h1><p>{{fornecedor.bairro}}</p></li>
+        <li><h1>CIDADE: </h1><p>{{fornecedor.cidade}}</p></li>
+        <li><h1>ESTADO: </h1><p>{{fornecedor.estado}}</p></li>
+        <li><h1>N°: </h1><p>{{fornecedor.numero}}</p></li>
+        <li><h1>COMPLEMENTO: </h1><p>{{fornecedor.complemento}}</p></li>
+        <li><h1>ACESSO: </h1><p>{{fornecedor.acesso}}</p></li>
     </ul>
+  }
   </nav>
+
 </mat-dialog-content>
 </body>
 

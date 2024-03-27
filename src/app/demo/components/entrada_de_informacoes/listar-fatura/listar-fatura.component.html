@@ -35,19 +35,23 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+
+                                    @for(item of fatura; track item){ 
                                 <tr>
-                                    <td>1</td>
-                                    <td>COMANDO AUTO-PEÇAS LTDA</td>
-                                    <td>25/10/2018</td>
-                                    <td>15</td>
-                                    <td style="width: 20px;">Fatura referente aos escapamentos da Volkswagen.</td>
-                                    <td>789,89</td>
+
+                                    <td>{{item._id}}</td>
+                                    <td>{{item.empresa_devedora}}</td>
+                                    <td>{{item.data_de_vencimento}}</td>
+                                    <td>{{item.dias_para_alerta}}</td>
+                                    <td style="width: 20px;">{{item.descricao_da_fatura}}</td>
+                                    <td>{{item.valor_da_fatura}}</td>
                                     <td style="width: 60px;">
 <!--                                        <a href="#" class="fa fa-list-alt text-secondary"  data-toggle="modal" data-target="#modalDetalharFornecerdor" title="Detalhar"></a>-->
                                         <a href="editarFatura.php" class="fa fa-edit align-items-center" title="Alterar"></a>
                                         <a href="#" class="fa fa-trash-alt text-danger"  data-toggle="modal" data-target="#modalExcluirFatura" title="Excluir"></a>
                                     </td>
                                 </tr>
+                            }
                                 </tbody>
                             </table>
                         </div>

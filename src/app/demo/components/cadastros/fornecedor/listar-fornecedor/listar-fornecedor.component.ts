@@ -1,19 +1,48 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { IFornecedor } from 'src/app/demo/interface/Ifornecedor';
 import {MatDialogModule, MatDialog} from '@angular/material/dialog';
 import { EdialogPanelClass } from 'src/app/demo/enum/EdialogPanelClass.enum';
 import { ComponentDialogComponent } from '../../../dialog/component-dialog/component-dialog.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
+import { ApiService } from 'src/app/demo/services/serviceFornecedor/api.service';
 
 @Component({
   selector: 'app-listar-fornecedor',
   standalone: true,
-  imports: [RouterLink, MatDialogModule, CommonModule, ComponentDialogComponent],
+  imports: [RouterLink, MatDialogModule, CommonModule, ComponentDialogComponent, JsonPipe],
   templateUrl: './listar-fornecedor.component.html',
   styleUrl: './listar-fornecedor.component.scss'
     })
-export class ListarFornecedorComponent {
+export class ListarFornecedorComponent implements OnInit{
+  fornecedores: any[];
+ 
+  constructor(private apiService: ApiService ) {}
+  ngOnInit(): void {
+    console.log('O metodo que foi chamado:', this.carregarFornecedores());
+    this.carregarFornecedores();
+   } 
+   
+
+   //Informação direto do banco de dados!
+  carregarFornecedores(){
+      this.apiService.getDadosFornecedor().subscribe(
+      (data : any[]) => {
+       
+        this.fornecedores = data;
+        console.log('Dados recebidos:', data);
+       },
+      error => {
+        console.log('Error neste TS', error);
+      }
+    );
+  }
+
+
+
+
+
+
 
   #dialog = inject (MatDialog);
 

@@ -1,9 +1,10 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Icolaborador } from 'src/app/demo/interface/Icolaborador';
 import {MatDialogModule, MatDialog} from '@angular/material/dialog';
 import { EdialogPanelClass } from 'src/app/demo/enum/EdialogPanelClass.enum';
 import { ComponentDialogColaboradorComponent } from '../../../dialog/component-dialog-colaborador/component-dialog-colaborador.component';
+import { ApiService } from 'src/app/demo/services/serviceFornecedor/api.service';
   
 
 @Component({
@@ -13,7 +14,33 @@ import { ComponentDialogColaboradorComponent } from '../../../dialog/component-d
   templateUrl: './listar-colaborador.component.html',
   styleUrl: './listar-colaborador.component.scss'
 })
-export class ListarColaboradorComponent {
+export class ListarColaboradorComponent implements OnInit{
+
+  constructor (private apiService: ApiService){}
+  ngOnInit(): void {this.carregarColaboradores();}
+
+  colaboradores: any[];
+
+
+  carregarColaboradores() {
+    this.apiService.getDadosColaborador().subscribe(
+      (data: any[]) => {
+        this.colaboradores = data;
+      }, error => {
+        console.log('Erro ao receber dados de colaborador:', error);
+      }
+    )
+  }
+
+  
+
+
+
+ 
+
+
+
+
 
 
   public arrayColaborador = signal<Icolaborador[]>([

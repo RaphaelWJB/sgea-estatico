@@ -27,8 +27,9 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                    @for(item of clientes; track item){
                                 <tr>
-                                    @for(item of arrayCliente(); track item){
+                                   
 
                                   
                                     <td>{{item.nome}}</td>
@@ -37,13 +38,14 @@
                                     <td>{{item.email}}</td>
                                     <!-- <td>Pai Soberano</td> -->
                                     <td>Ativo</td>
-                                }
+                               
                                     <td>    @for(item of arrayCliente(); track item){ 
                                         <button (click)="openDialog(item)"><a class="fa fa-list-alt text-secondary"  data-toggle="modal" data-target="#mostrar" title="Detalhes"></a></button>}
                                         <a href="editarCliente.php" class="fa fa-edit align-items-center" title="Editar"></a>
-                                        <a href="#" class="fa fa-ban text-danger"  data-toggle="modal" data-target="#modalInativarCliente" data-placement="top" title="Inativar"></a>
+                                        <a class="fa fa-ban text-danger"  data-toggle="modal" data-target="#modalInativarCliente" data-placement="top" title="Inativar"></a>
                                     </td>
                                 </tr>
+                            }
                                 </tbody>
                             </table>
                         </div>

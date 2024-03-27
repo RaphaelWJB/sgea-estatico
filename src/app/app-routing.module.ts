@@ -23,7 +23,7 @@ import { ColaboradorComponent } from './demo/components/extrato/listarRelatorio/
 import { FinanceiroComponent } from './demo/components/extrato/listarRelatorio/financeiro/financeiro.component';
 import AuthSigninComponent from './demo/pages/authentication/auth-signin/auth-signin.component';
 import { ComponentDialogComponent } from './demo/components/dialog/component-dialog/component-dialog.component';
-
+ 
 const routes: Routes = [
 
 
@@ -140,7 +140,8 @@ const routes: Routes = [
       {
         path:'listarRfinanceiro',
         component: FinanceiroComponent
-      },     
+      },  
+           
       
     ],
   },

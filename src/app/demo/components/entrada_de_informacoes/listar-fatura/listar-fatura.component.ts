@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ApiService } from 'src/app/demo/services/serviceFornecedor/api.service';
 
 @Component({
   selector: 'app-listar-fatura',
@@ -8,6 +9,26 @@ import { RouterLink } from '@angular/router';
   templateUrl: './listar-fatura.component.html',
   styleUrl: './listar-fatura.component.scss'
 })
-export class ListarFaturaComponent {
+export class ListarFaturaComponent implements OnInit{
+  
+  fatura: any[];
+
+  constructor(private apiService : ApiService){}
+  ngOnInit(): void { this.carregarDadosFatura()}
+
+
+  carregarDadosFatura(){
+    this.apiService.getDadosFatura().subscribe(
+      (data: any[]) => {
+
+        this.fatura = data;
+        console.log("Dados capturados", this.fatura);
+      });
+       }
+ 
+ 
+ 
+
+  
 
 }

@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, signal } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { IProduto } from 'src/app/demo/interface/iproduto';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { EdialogPanelClass } from 'src/app/demo/enum/EdialogPanelClass.enum';
 import { ComponentDialogProdutoComponent } from '../../../dialog/component-dialog-produto/component-dialog-produto.component';
-
+import { ApiService } from 'src/app/demo/services/serviceFornecedor/api.service';
+ 
 
 @Component({
   selector: 'app-listar-produtos',
@@ -14,7 +15,44 @@ import { ComponentDialogProdutoComponent } from '../../../dialog/component-dialo
   templateUrl: './listar-produtos.component.html',
   styleUrl: './listar-produtos.component.scss'
 })
-export class ListarProdutosComponent {
+export class ListarProdutosComponent implements OnInit{
+
+  constructor(private apiService: ApiService){}
+  ngOnInit(): void { this.getDadosProdutos() }
+ 
+  produtos: any[];
+
+  getDadosProdutos(){
+    this.apiService.getDadosProduto().subscribe(
+      (data: any[]) => {
+        this.produtos = data;
+        console.log('Dados recebidos:', this.produtos);
+      }, (error) => {
+        console.log('Erro neste TS', error);
+      }
+    )
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   public arrayProdutos = signal<IProduto[]>([
     {

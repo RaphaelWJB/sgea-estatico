@@ -39,12 +39,12 @@
                                 </thead>
 
                                 <tbody>
-                                    @for(item of arrayProdutos(); track item){
+                                    @for(item of produtos; track item){
                                 <tr>
-                                    <td>{{item.codigo}}</td>
-                                    <td>{{item.produto}}</td>
-                                    <td>{{item.marca}}</td>
-                                    <td>{{item.qtde_estoque}}</td>
+                                    <td>{{item._id}}</td>
+                                    <td>{{item.nome_do_produto}}</td>
+                                    <td>{{item.marca_do_produto}}</td>
+                                    <td>{{item.qtde_produto}}</td>
                                     <td>{{item.tipo}}</td>
                                     <td>{{item.categoria}}</td>
                                     <td>{{item.data_de_vencimento}}</td>
